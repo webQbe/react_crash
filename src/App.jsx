@@ -20,8 +20,8 @@ const App = () => {
         The sum of {x} and {y} is {x + y}
       </p>
       <ul>
-        { names.map((name) => (
-          <li>{ name }</li>
+        { names.map((name, index) => (
+          <li key={index}>{ name }</li>
         ))}  
       </ul>
     </>
