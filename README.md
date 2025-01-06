@@ -42,7 +42,8 @@ Allows us to use state and other React features within functional components.
 
 An HTML-like syntax within JavaScript (components)
 
-`const Hero = ({
+``` 
+const Hero = ({
     title = 'Become a React Dev',
     subtitle = 'Find the React job that fits your skills and needs'
 }) => {
@@ -62,7 +63,8 @@ An HTML-like syntax within JavaScript (components)
         );
 };
 
-export default Hero;`
+export default Hero;
+```
 
 
 ## SPA, SSR & SSG
