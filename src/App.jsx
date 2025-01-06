@@ -1,10 +1,14 @@
 import React from 'react'
 
 const App = () => {
+
+  /* Adding a dynamic variable */
+  const name = 'John';
+
   return (
     <>
       <div className='text-5xl'>App</div>
-      <p>Hello</p>
+      <p>Hello {name}</p>
     </>
     /* <p>Hello</p> Error: Must have one parent element 
       You can wrap multiple elements inside a parent div
