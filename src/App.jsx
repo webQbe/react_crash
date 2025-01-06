@@ -2,8 +2,8 @@ import React from 'react'
 
 const App = () => {
   return (
-    <div>App</div>
+    <div className='text-5xl'>App</div>
   )
 }
 
-export default App
+export default App 
