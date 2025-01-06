@@ -7,6 +7,8 @@ import App from './App.jsx'
 // Render whatever you want with render()
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <h1>Hello</h1>
+    <App />
   </StrictMode>,
 )
+
+/* <StrictMode> : Checks for potential problems in your app  */

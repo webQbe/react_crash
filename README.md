@@ -109,12 +109,30 @@ export default Hero;
 6. Run sever with `npm run dev`
 
 7. Add snippets easily to generate components
-    - Install & Enable `ES7+ React/Redux/React-Native` VSCode extension
+    - Install `ES7+ React/Redux/React-Native` VSCode extension
 
 8. Install Tailwind, PostCSS, & Autoprefixer
     1. `npm install -D tailwindcss postcss autoprefixer`
     2. Init Tailwind: `npx tailwindcss init -p`
-    3. Modify `tailwind.config.js` file:
+    3. Modify `tailwind.config.js` file
+    4. Delete `src/App.css` file
          
+9. Generate component with `ES7+ React/Redux/React-Native` extension
 
+    1. Enable `ES7+ React/Redux/React-Native` VSCode extension
+
+    2. Clear default code in `src/App.jsx` file
+    
+    3. Type `rafce` to generate `React Arrow Function Component` with `Export`
+        ```
+        import React from 'react'
+
+        const App = () => {
+            return (
+                <div>App</div>
+            )
+        }
+
+        export default App
+        ```
 
