@@ -121,9 +121,9 @@ export default Hero;
 
     1. Enable `ES7+ React/Redux/React-Native` VSCode extension
 
-    2. Clear default code in `src/App.jsx` file
-    
-    3. Type `rafce` to generate `React Arrow Function Component` with `Export`
+    2. Clear default code in `src/App.jsx` and `src/index.css` files
+
+    3. In `src/App.jsx` file, type `rafce` to generate `React Arrow Function Component` with `Export`
         ```
         import React from 'react'
 
