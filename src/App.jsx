@@ -9,7 +9,7 @@ const App = () => {
       {/* Using Components 
          Use Devloper Tools in the browser to see components tab */}
       <Navbar />
-      <Hero title='Test Title' subtitle='This is the subtitle'/>
+      <Hero />
 
 
       {/* <!-- Developers and Employers --> */} 
