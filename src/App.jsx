@@ -19,7 +19,7 @@ const App = () => {
   return (
     <>
       <div className='text-5xl'>App</div>
-      <p>Hello {name}</p>
+      <p style={{ color: 'red', fontSize: '24px' }}>Hello {name}</p>
       <p>
         The sum of {x} and {y} is {x + y}
       </p>
