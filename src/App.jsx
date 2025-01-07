@@ -15,11 +15,17 @@ const App = () => {
   /* Using Conditionals */
   const loggedIn = true;
 
+  /* Using variables for styling  */
+  const styles = {
+    color: 'red',
+    fontSize: '55px'
+  }
+
 
   return (
     <>
       <div className='text-5xl'>App</div>
-      <p style={{ color: 'red', fontSize: '24px' }}>Hello {name}</p>
+      <p style={ styles }>Hello {name}</p>
       <p>
         The sum of {x} and {y} is {x + y}
       </p>
