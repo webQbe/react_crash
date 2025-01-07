@@ -5,7 +5,8 @@ import React from 'react'
 const App = () => {
   return (
     <>
-      {/* Using Navbar Component */}
+      {/* Using Navbar Component 
+         Use Devloper Tools in the browser to see components tab */}
       <Navbar />
 
       {/* <!-- Hero --> */}
