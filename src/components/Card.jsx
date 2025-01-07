@@ -1,8 +1,10 @@
 import React from 'react'
 
-const Card = ({ children }) => {
+/* Default bg class for Card */
+const Card = ({ children, bg = 'bg-gray-100' }) => {
   return (
-    <div className='bg-gray-100 p-6 rounded-lg shadow-md'>
+    /* Adding background color dynamically */
+    <div className={`${bg} p-6 rounded-lg shadow-md`}>
         { children }
     </div>
   )
