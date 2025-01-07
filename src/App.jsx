@@ -12,6 +12,10 @@ const App = () => {
   /* Looping through arrays */
   const names = ['Brad', 'Mary', 'Joe', 'Sara'];
 
+  /* Using Conditionals */
+  const loggedIn = true;
+
+
   return (
     <>
       <div className='text-5xl'>App</div>
@@ -24,10 +28,18 @@ const App = () => {
           <li key={index}>{ name }</li>
         ))}  
       </ul>
+      { loggedIn ? <h1>Hello Member!</h1> : <h1>Hello Guest!</h1> }
+      { loggedIn && <h1>Hello Member!</h1> }
     </>
-    /* <p>Hello</p> Error: Must have one parent element 
-      You can wrap multiple elements inside a parent div
-      If you don't want an actual parent div, you can use empty html tag <> </> 
+    /* 
+      Parent Element
+      - Can only have one parent element 
+      - You can wrap multiple elements inside a parent <div>
+      - If you don't want an actual parent <div>, you can use empty html tag <> </> 
+
+      Conditionals
+      - { loggedIn && <h1>Hello Member!</h1> } : <h1> is displayed if loggedIn is True
+
     */
   )
 }
