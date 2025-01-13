@@ -1,6 +1,28 @@
-import React from 'react'
+import React from 'react';
+import { useState } from 'react'; // Import useState
 
-const JobAd = ({ job }) => {
+const JobAd = ({ job }) => { // accepts a job object as a prop
+
+    // Use useState hook to manage a boolean state, showFullDescription, which determines whether the full job description should be displayed.
+    const [showFullDescription, setShowFullDescription] = useState(false); 
+
+    /* setShowFullDescription function (from useState) can be used to toggle the state. 
+    This will switch between showing the truncated description and the full description. */
+    
+
+    // The job description is stored in the description variable.
+    let description = job.description;
+
+    if(!showFullDescription){
+
+        description = description.substring(0, 90) + '...';
+        /* If showFullDescription is false, the description is truncated to the first 90 characters, and an ellipsis (...) is appended. 
+        
+        When the showFullDescription state is false, users will see only the first 90 characters of the job description. This is helpful for keeping the interface clean and concise when dealing with long descriptions.*/
+
+    }
+
+
   return (
     <div className="bg-white rounded-xl shadow-md relative">
                             <div className="p-4">
@@ -10,7 +32,7 @@ const JobAd = ({ job }) => {
                                 </div>
                     
                                 <div className="mb-5">
-                                        { job.description }
+                                        { description }
                                 </div>
                     
                                 <h3 className="text-indigo-500 mb-2">{job.salary} / Year</h3>
