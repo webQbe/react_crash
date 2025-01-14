@@ -1,7 +1,7 @@
 /* rafce */
 import React from 'react'
 
-const Hero = ({
+const Header = ({
                 title = 'Become a React Dev',
                 subtitle = 'Find the react job that fits your skill set'
              }) => {
@@ -21,6 +21,6 @@ const Hero = ({
         )
 }
 
-export default Hero
+export default Header
 
 
