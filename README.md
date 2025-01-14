@@ -135,4 +135,6 @@ export default Hero;
 
         export default App
         ```
+10. Install React Icons
+    - Run `npm i react-icons`
 
