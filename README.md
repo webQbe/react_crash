@@ -138,3 +138,5 @@ export default Hero;
 10. Install React Icons
     - Run `npm i react-icons`
 
+11. Install React Router package to add additional pages
+    - Run `npm i react-router-dom`
