@@ -39,8 +39,8 @@ const JobAd = ({ job }) => { // accepts a job object as a prop
                                 <button onClick={() => setShowFullDescription((prevState) => !prevState)} className="text-indigo-500 mb-5 hover:text-indigo-600">
                                     { showFullDescription ? 'Less' : 'More' }
                                 </button>
-
-                                /* When the button is clicked, the setShowFullDescription function is called with a callback function as its argument.
+                            {/* 
+                                When the button is clicked, the setShowFullDescription function is called with a callback function as its argument.
                                 
                                 This callback function toggles the value of showFullDescription:
                                     If showFullDescription is true, clicking the button sets it to false.
@@ -52,7 +52,7 @@ const JobAd = ({ job }) => { // accepts a job object as a prop
 
                                 The button's label changes dynamically based on the value of showFullDescription:
                                     If showFullDescription is true, the button displays 'Less'.
-                                    If showFullDescription is false, the button displays 'More'.  */                             
+                                    If showFullDescription is false, the button displays 'More'. */}                             
                                 
 
                                 <h3 className="text-indigo-500 mb-2">{job.salary} / Year</h3>

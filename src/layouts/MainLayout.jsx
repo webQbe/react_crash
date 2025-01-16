@@ -16,7 +16,7 @@ export default MainLayout
 /* MainLayout Component:
     Acts as a wrapper or layout for the application.
     Includes <Navbar /> component for any page
-    Contains an <Outlet /> placeholder component.
+    Contains an <Outlet /> placeholder component for each page.
 
     <Outlet />:
     A placeholder that renders child route components inside the MainLayout.
