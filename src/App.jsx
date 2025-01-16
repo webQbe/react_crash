@@ -10,6 +10,7 @@ import {
 import MainLayout from './layouts/MainLayout';
 import HomePage from './pages/HomePage';
 import JobsPage from './pages/JobsPage';
+import NotFoundPage from './pages/NotFoundPage';
        
 
 /* Create router variable */
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
 
     <Route index element={<HomePage />} />  
     <Route path='/jobs' element={<JobsPage />} />
+    <Route path='*' element={<NotFoundPage />} />
 
   </Route>
 
@@ -39,6 +41,7 @@ const router = createBrowserRouter(
     /* 
       Route: Represents a single route in the application 
       index / path='/about': Indicates this is the default route when the app loads
+      path='*': For any page that is not found
       element: Specifies the component or element to render when this route matches. 
       createRoutesFromElements(): Converts JSX route elements into a data structure that 
       createBrowserRouter() understands. 
