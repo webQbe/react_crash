@@ -2,9 +2,11 @@ import React from 'react'
 import jobs from '../jobs.json'; /* Import data from json file */
 import JobAd from '../components/JobAd'; /* Import JobAd component */
 
-const JobListings = () => {
-  // Only get first 3 jobs from jobs array
-  const recentJobs = jobs.slice(0, 3); 
+const JobListings = ({ isHome = false }) => {
+
+  const JobListings = isHome ? 
+    jobs.slice(0, 3) :  // isHome = true, Only show first 3 jobs
+    jobs; // isHome = false by default, Show all jobs
 
   return (
     <section className="bg-blue-50 px-4 py-10">
@@ -13,7 +15,7 @@ const JobListings = () => {
                 Browse Jobs
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                { recentJobs.map((job) => (
+                { JobListings.map((job) => (
                     <JobAd key={ job.id } job={ job } />    
                 ))}
             </div>
