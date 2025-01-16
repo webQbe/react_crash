@@ -140,3 +140,9 @@ export default Hero;
 
 11. Install React Router package to add additional pages
     - Run `npm i react-router-dom`
+
+12. Install JSON Server to create mock REST API
+    1. Run `npm i -D json-server` to install
+    2. Add `"server": "json-server --watch src/jobs.json --port <PORT NUMBER>"` to `scripts` in `package.json` file.
+    3. Run installed server with `npm run server`
+    4. Open endpoint link (E.g.: `http://localhost:8000/jobs`) to see JSON data
