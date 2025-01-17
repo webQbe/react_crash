@@ -135,7 +135,7 @@ export default Hero;
 
         export default App
         ```
-10. Install React Icons
+10. Install React Icons 
     - Run `npm i react-icons`
 
 11. Install React Router package to add additional pages
@@ -146,3 +146,6 @@ export default Hero;
     2. Add `"server": "json-server --watch src/jobs.json --port <PORT NUMBER>"` to `scripts` in `package.json` file.
     3. Run installed server with `npm run server`
     4. Open endpoint link (E.g.: `http://localhost:8000/jobs`) to see JSON data
+
+13. Install React Spinners
+    - Run `npm i react-spinners`

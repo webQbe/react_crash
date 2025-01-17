@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import JobAd from '../components/JobAd'; /* Import JobAd component */
+import Spinner from './Spinner'; /* Importing the Spinner Component */
 
 const JobListings = ({ isHome = false }) => {
   /* isHome: A boolean prop with a default value of false.
@@ -57,18 +58,16 @@ const JobListings = ({ isHome = false }) => {
             <h2 className="text-3xl font-bold text-indigo-500 mb-6 text-center">
                 {isHome ? 'Recent Jobs' : 'Browse Jobs'}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               { loading ? (
-                  <h2>Loading...</h2>
+                  <Spinner loading={loading}/>
                 ) : 
                 (
-                  <>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     { jobs.map((job) => (
                         <JobAd key={ job.id } job={ job } />    
                       ))}
-                  </>
+                  </div>
                 )}              
-            </div>
         </div>
     </section>
   )
