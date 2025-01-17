@@ -1,11 +1,11 @@
 import React from 'react';
-import { useState } from 'react'; // Import useState
-import { FaMapMarker } from 'react-icons/fa'; // Import FontAwesome component from React-Icons
+import { useState } from 'react'; /* Import useState */
+import { FaMapMarker } from 'react-icons/fa'; /* Import FontAwesome component from React-Icons */
 import { Link } from 'react-router-dom';
 
-const JobAd = ({ job }) => { // accepts a job object as a prop
+const JobAd = ({ job }) => {  /* accepts a job object as a prop */
 
-    // Use useState hook to manage a boolean state, showFullDescription, which determines whether the full job description should be displayed.
+    /* Use useState hook to manage a boolean state, showFullDescription, which determines whether the full job description should be displayed. */
     const [showFullDescription, setShowFullDescription] = useState(false); 
 
     /* setShowFullDescription function (from useState) can be used to toggle the state. 
