@@ -1,7 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const AddJobPage = () => {
+const AddJobPage = ({ addJobSubmit }) => { 
+    /* addJobSubmit() prop is responsible for handling the new job submission logic */
 
     const [title, setTitle] = useState('');
     const [type, setType] = useState('Full-Time');
@@ -39,11 +41,15 @@ const AddJobPage = () => {
             e.target.value captures the entered value.
     */
 
-    /* Prevent default page reload */        
-    const submitForm = (e) => {
-        e.preventDefault();
 
-        /* Create newJob Object to console log all input values*/
+    const navigate = useNavigate(); /* Init useNavigate 
+    This hook allows navigation programmatically.
+    It provides a function (navigate) to change the current route.*/
+          
+    const submitForm = (e) => {
+        e.preventDefault(); /* Prevent default page reload */
+
+        /* Constructs a newJob object */
         const newJob = {
           title,
           type,
@@ -58,7 +64,9 @@ const AddJobPage = () => {
           },
         };
 
-        console.log(newJob);
+        addJobSubmit(newJob); /* Call addJobSubmit with the new job */
+
+        return navigate('/jobs'); /* On submit redirect the user to /jobs */
     };
 
 
