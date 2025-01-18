@@ -21,9 +21,6 @@ const JobListings = ({ isHome = false }) => {
     */
 
   useEffect(() => {
-  /* The useEffect hook:
-    Runs only once when the component mounts (due to the empty dependency array []).
-    Defines and immediately calls the fetchJobs function. */
 
     const fetchJobs = async () => {
       /* Limit Job listings on Homepage */
@@ -53,6 +50,46 @@ const JobListings = ({ isHome = false }) => {
     fetchJobs();
 
   }, []);
+
+  /* useEffect hook overview:
+        The useEffect hook is used to run side effects in functional components.
+
+         Examples of side effects include:
+            Fetching data from an API.
+            Subscribing to a WebSocket.
+            Setting up event listeners. 
+
+
+        Dependency Array in useEffect:
+            The second argument of useEffect is a dependency array, which controls when the effect runs:
+
+            Empty Dependency Array []:
+                The effect runs only once, after the initial render of the component.
+
+            No Dependency Array:
+                The effect runs after every render, which can cause performance issues if not used carefully.
+
+            Specific Dependencies:
+                The effect runs only when the specified dependencies change.
+
+                useEffect(() => {
+                    console.log('Effect runs when count changes');
+                    }, [count]); // Runs only when `count` changes
+
+
+            Why Use an Empty Dependency Array?
+
+            An empty dependency array is commonly used when:
+                You want to fetch data or set up something (e.g., event listeners) once, when the component is first rendered.
+                It ensures that the effect runs only once, avoiding unnecessary repeated executions.
+
+
+            How It Works Internally
+
+                React keeps track of the dependencies in the array.
+                If the array is empty, React knows there are no dependencies to watch, so the effect runs once and doesn't run again unless the component unmounts and remounts.
+    */
+
 
   return (
     <section className="bg-blue-50 px-4 py-10">

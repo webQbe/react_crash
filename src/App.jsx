@@ -11,7 +11,7 @@ import MainLayout from './layouts/MainLayout';
 import HomePage from './pages/HomePage';
 import JobsPage from './pages/JobsPage';
 import NotFoundPage from './pages/NotFoundPage';
-import JobPage from './pages/JobPage';
+import JobPage, { jobLoader } from './pages/JobPage'; /* Import JobPage component and its associated jobLoader function  */
        
 
 /* Create router variable */
@@ -23,7 +23,7 @@ const router = createBrowserRouter(
 
     <Route index element={<HomePage />} />  
     <Route path='/jobs' element={<JobsPage />} />
-    <Route path='/jobs/:id' element={<JobPage />} />
+    <Route path='/jobs/:id' element={<JobPage />} loader={jobLoader} />
     <Route path='*' element={<NotFoundPage />} />
 
   </Route>
@@ -48,6 +48,26 @@ const router = createBrowserRouter(
       createRoutesFromElements(): Converts JSX route elements into a data structure that 
       createBrowserRouter() understands. 
 
+      Dynamic Route: 
+      <Route path='/jobs/:id' element={<JobPage />} loader={jobLoader} />
+
+        The route path /jobs/:id defines a dynamic segment (:id).
+        For example:
+            Navigating to /jobs/123 makes id equal to 123.
+        element Prop:
+            Specifies the component to render (<JobPage />).
+        loader Prop:
+            Assigns the jobLoader function to fetch data before rendering JobPag
+
+
+        Advantages of This Approach:
+        
+          Data Fetching Before Render:
+              Ensures data is ready when the component renders, preventing loading flickers.
+          Dynamic Routing:
+              Supports fetching data specific to a parameterized route (e.g., /jobs/:id).
+          Separation of Concerns:
+              Keeps the data-fetching logic (jobLoader) separate from the rendering logic (JobPage).
       */
 
 );
