@@ -4,10 +4,10 @@ import { useState } from 'react';
 const AddJobPage = () => {
 
     const [title, setTitle] = useState('');
-    const [type, setType] = useState('');
+    const [type, setType] = useState('Full-Time');
     const [location, setLocation] = useState('');
     const [description, setDescription] = useState('');
-    const [salary, setSalary] = useState('');
+    const [salary, setSalary] = useState('Under $50K');
     const [companyName, setCompanyName] = useState('');
     const [companyDescription, setCompanyDescription] = useState('');
     const [contactEmail, setContactEmail] = useState('');
@@ -43,7 +43,7 @@ const AddJobPage = () => {
     const submitForm = (e) => {
         e.preventDefault();
 
-        /* Create newJob Object to log all input values*/
+        /* Create newJob Object to console log all input values*/
         const newJob = {
           title,
           type,
