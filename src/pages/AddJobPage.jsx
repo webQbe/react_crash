@@ -2,6 +2,43 @@ import React from 'react';
 import { useState } from 'react';
 
 const AddJobPage = () => {
+
+    const [title, setTitle] = useState('');
+    const [type, setType] = useState('');
+    const [location, setLocation] = useState('');
+    const [description, setDescription] = useState('');
+    const [salary, setSalary] = useState('');
+    const [companyName, setCompanyName] = useState('');
+    const [companyDescription, setCompanyDescription] = useState('');
+    const [contactEmail, setContactEmail] = useState('');
+    const [contactPhone, setContactPhone] = useState('');
+
+    /* Add useState hook to each form field 
+
+        How the Component Works
+
+          1. Initial Render:
+              Each state is initialized to '', so the fields has no value by default.
+
+          2. User Interaction:
+              When a enters a value:
+                  The onChange event is triggered.
+                  The setXxx() function updates the state with the entered value.
+
+          3. State Update and Re-render:
+              Updating the state causes the component to re-render.
+              The new value of state is reflected in the value attribute of the <select> element.
+
+        Key Attributes in HTML <form>:
+          value={STATE}:
+            Binds the field's value to the state.
+            Ensures the field reflects the current state.
+
+          onChange={(e) => setType(e.target.value)}:
+            Updates the state whenever the user changes field's value.
+            e.target.value captures the entered value.
+    */
+
   return (
     <section className="bg-indigo-50">
       <div className="container m-auto max-w-2xl py-24">
@@ -17,7 +54,7 @@ const AddJobPage = () => {
                 id="type"
                 name="type"
                 className="border rounded w-full py-2 px-3"
-                required>
+                required value={type} onChange={(e) => setType(e.target.value)}>
                 <option value="Full-Time">Full-Time</option>
                 <option value="Part-Time">Part-Time</option>
                 <option value="Remote">Remote</option>
@@ -27,8 +64,7 @@ const AddJobPage = () => {
 
             <div className="mb-4">
               <label className="block text-gray-700 font-bold mb-2"
-                >Job Listing Name</label
-              >
+                >Job Listing Name</label>
               <input
                 type="text"
                 id="title"
@@ -36,20 +72,23 @@ const AddJobPage = () => {
                 className="border rounded w-full py-2 px-3 mb-2"
                 placeholder="eg. Beautiful Apartment In Miami"
                 required
+                value={title} 
+                onChange={(e) => setTitle(e.target.value)}
               />
             </div>
             <div className="mb-4">
               <label
                 htmlFor="description"
                 className="block text-gray-700 font-bold mb-2"
-                >Description</label
-              >
+                >Description</label>
               <textarea
                 id="description"
                 name="description"
                 className="border rounded w-full py-2 px-3"
                 rows="4"
                 placeholder="Add any job duties, expectations, requirements, etc"
+                value={description} 
+                onChange={(e) => setDescription(e.target.value)}
               ></textarea>
             </div>
 
@@ -62,6 +101,8 @@ const AddJobPage = () => {
                 name="salary"
                 className="border rounded w-full py-2 px-3"
                 required
+                value={salary} 
+                onChange={(e) => setSalary(e.target.value)}
               >
                 <option value="Under $50K">Under $50K</option>
                 <option value="$50K - 60K">$50K - $60K</option>
@@ -87,7 +128,9 @@ const AddJobPage = () => {
                 name='location'
                 className='border rounded w-full py-2 px-3 mb-2'
                 placeholder='Company Location'
-                required           
+                required
+                value={location} 
+                onChange={(e) => setLocation(e.target.value)}           
               />
             </div>
 
@@ -103,6 +146,8 @@ const AddJobPage = () => {
                 name="company"
                 className="border rounded w-full py-2 px-3"
                 placeholder="Company Name"
+                value={companyName} 
+                onChange={(e) => setCompanyName(e.target.value)}
               />
             </div>
 
@@ -118,6 +163,8 @@ const AddJobPage = () => {
                 className="border rounded w-full py-2 px-3"
                 rows="4"
                 placeholder="What does your company do?"
+                value={companyDescription} 
+                onChange={(e) => setCompanyDescription(e.target.value)}
               ></textarea>
             </div>
 
@@ -134,23 +181,25 @@ const AddJobPage = () => {
                 className="border rounded w-full py-2 px-3"
                 placeholder="Email address for applicants"
                 required
+                value={contactEmail} 
+                onChange={(e) => setContactEmail(e.target.value)}
               />
             </div>
             <div className="mb-4">
               <label
                 htmlFor="contact_phone"
                 className="block text-gray-700 font-bold mb-2"
-                >Contact Phone</label
-              >
+                >Contact Phone</label>
               <input
                 type="tel"
                 id="contact_phone"
                 name="contact_phone"
                 className="border rounded w-full py-2 px-3"
                 placeholder="Optional phone for applicants"
+                value={contactPhone} 
+                onChange={(e) => setContactPhone(e.target.value)}
               />
             </div>
-
             <div>
               <button
                 className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
