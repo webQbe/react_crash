@@ -37,7 +37,12 @@ const App = () => {
 
   /* Delete Job */
   const deleteJob = async (id) => {
-    console.log('delete', id);
+    const res = await fetch(`/api/jobs/${id}`, {
+      /*  fetch() sends an HTTP request to the /api/jobs endpoint with jobId */
+      method: 'DELETE', 
+        /* Remove selected resource on the server */
+    }); 
+    return; 
   };
 
   /* Create router variable */
