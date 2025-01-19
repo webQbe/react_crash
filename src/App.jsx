@@ -17,10 +17,22 @@ import AddJobPage from './pages/AddJobPage';
 
 
 const App = () => {
-  const addJob = (newJob) => {
-
-    console.log(newJob); /* Log the new job to the console */
-
+  const addJob = async (newJob) => { /* Asynchronous Function */
+    /* Add New Job */
+    const res = await fetch('/api/jobs', {
+        /* fetch() sends an HTTP request to the /api/jobs endpoint 
+           await keyword ensures the function waits for the fetch promise to resolve before proceeding.*/
+        method: 'POST', 
+          /* Create new resources on the server */
+        headers: {
+          'Content-Type': 'application/json' 
+          /* Tells the server that the request body contains JSON data */
+        },
+        body: JSON.stringify(newJob) 
+          /* Converts the newJob JavaScript object into a JSON string for sending structured data in the request */
+      }); 
+      return; 
+        /* The function ends */
   }
 
   /* Create router variable */
@@ -78,23 +90,19 @@ const App = () => {
               Keeps the data-fetching logic (jobLoader) separate from the rendering logic (JobPage).
       
 
-      Passing Props:
+      Passing Function to a Component as prop:
           <Route path='/add-job' element={<AddJobPage addJobSubmit={addJob} />} />
 
-            Passes the addJob function as the addJobSubmit prop to the AddJobPage component.
+            1. Triggering the Function:
+              The addJob() function is passed to the <AddJobPage /> component as a prop (addJobSubmit()).
+              When a user submits the form in <AddJobPage />, the submitForm() function calls addJobSubmit(newJob).
 
-            Why Use This Setup?
+            2. Making the API Request:
+                The addJob() function sends the newJob object to the /api/jobs endpoint.
 
-              Separation of Concerns:
-                  AddJobPage handles form submission and redirection.
-                  App.jsx defines the route and handles data submission logic (addJob).
-
-              Reusability:
-                  AddJobPage can be reused in other parts of the app with different submission functions.
-
-              Scalability:
-                  Adding server-side submission is easy (e.g., extend addJob to send newJob to an API).
-    
+            3. Server Response:
+                The server processes the request and (ideally) creates a new job resource.
+                
       */
 
 
