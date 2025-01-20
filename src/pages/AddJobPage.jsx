@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const AddJobPage = ({ addJobSubmit }) => { 
     /* addJobSubmit() prop is responsible for handling the new job submission logic */
@@ -65,6 +66,8 @@ const AddJobPage = ({ addJobSubmit }) => {
         };
 
         addJobSubmit(newJob); /* Call addJobSubmit with the new job */
+
+        toast.success('Job Added Successfully!'); /* Show Toastify Notification */
 
         return navigate('/jobs'); /* On submit redirect the user to /jobs */
     };

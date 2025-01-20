@@ -149,3 +149,6 @@ export default Hero;
 
 13. Install React Spinners
     - Run `npm i react-spinners`
+
+14. Install React Toastify to Show Notifications 
+    - Run `npm i react-toastify`

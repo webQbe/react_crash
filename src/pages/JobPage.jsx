@@ -2,6 +2,7 @@ import React from 'react'
 import { useParams, useLoaderData, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { FaArrowLeft, FaMapMarker } from 'react-icons/fa'; /* Import Icons */
+import { toast } from 'react-toastify';
 
 /* The JobPage component represents the page that displays job details. */
 
@@ -28,6 +29,9 @@ const JobPage = ({ deleteJob }) => {
         const confirm = window.confirm('Are you sure you want to delete this listing?');/* Show pop-up box */
         if (!confirm) return; /* Stop if not confirmed */
         deleteJob(jobId); /* Call deleteJob function in App.jsx with jobId */
+
+        toast.success('Job deleted successfully!');  /* Show Toastify Notification */
+
         navigate('/jobs'); /* Redirect to /jobs */
     }        
 
