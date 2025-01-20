@@ -152,3 +152,12 @@ export default Hero;
 
 14. Install React Toastify to Show Notifications 
     - Run `npm i react-toastify`
+
+    
+
+## Deployment
+
+1. Stop the development server
+2. Run `npm run build` to get the production version of the site
+3. Preview production version with `npm run preview`
+4. Create API for jobs data (E.g. using Express)
