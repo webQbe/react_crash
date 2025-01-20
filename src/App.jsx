@@ -14,6 +14,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import JobPage, { jobLoader } from './pages/JobPage'; /* Import JobPage component and its associated jobLoader function  */
 import AddJobPage from './pages/AddJobPage';
 import EditJobPage from './pages/EditJobPage';
+import JobListings from './components/JobListings';
 
 
 
@@ -46,6 +47,20 @@ const App = () => {
     return; 
   };
 
+  /* Update Job */
+  const updateJob = async (job) => { /* Passing job */
+    const res = await fetch(`/api/jobs/${job.id}`, { 
+      /*  fetch() sends an HTTP request to the /api/jobs endpoint with job.id */
+      method: 'PUT', /* This is a PUT request */
+      headers: {
+        'Content-Type': 'application/json' 
+      },
+      body: JSON.stringify(job) /* Add job to request body */
+    }); 
+    return; 
+
+  }
+
   /* Create router variable */
   const router = createBrowserRouter(
   /* createBrowserRouter: Accepts the routes generated below and creates a router instance that manages the application's navigation. */
@@ -56,7 +71,7 @@ const App = () => {
       <Route index element={<HomePage />} />  
       <Route path='/jobs' element={<JobsPage />} />
       <Route path='/add-job' element={<AddJobPage addJobSubmit={addJob}/>} />
-      <Route path='/edit-job/:id' element={<EditJobPage />} loader={jobLoader} />
+      <Route path='/edit-job/:id' element={<EditJobPage updateJobSubmit={updateJob} />} loader={jobLoader} />
       <Route path='/jobs/:id' element={<JobPage deleteJob={ deleteJob }/>} loader={jobLoader} />
       <Route path='*' element={<NotFoundPage />} />
 
