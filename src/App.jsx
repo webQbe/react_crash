@@ -91,7 +91,7 @@ const App = () => {
         element Prop:
             Specifies the component to render (<JobPage />).
         loader Prop:
-            Assigns the jobLoader function to fetch data before rendering JobPag
+            Assigns the jobLoader function to fetch data before rendering JobPage
 
         Advantages of This Approach:
           Data Fetching Before Render:
